@@ -1,0 +1,1 @@
+const newTodo = prompt('What would you like to do?')
