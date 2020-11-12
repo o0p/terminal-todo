@@ -1,9 +1,10 @@
 //ask usr what action to perorm
 let   askUsr = prompt('Please select action:'),
         createEntry = [];
+//available actions
 let newTask = 'n',
-    listTask = 'list',
-    deleteTask = 'delete',
+    listTask = 'l',
+    deleteTask = 'd',
     quit = 'q';
 //if new - add new item to arr
 while (askUsr === 'n') {
@@ -13,7 +14,6 @@ while (askUsr === 'n') {
         console.log(askUsr);
         if (askUsr) {
             askUsr = createEntry.push(askUsr);
-            console.log(createEntry);
             askUsr = prompt('Please select action:');
         }
     }
