@@ -11,9 +11,6 @@ let newTask = 'n',
 
 
 while (askUsr !=='q'){
-    if (askUsr !== 'n' || askUsr !== 'l' || askUsr !== 'd' || askUsr !== 'q'){
-    askUsr = prompt('Please select CORRECT action:');
-}
 
      if (askUsr === 'n') {
         askUsr = prompt('What would you like to do?');
@@ -37,9 +34,12 @@ while (askUsr !=='q'){
         console.log('deleted')
         askUsr = prompt('Please select action:');
     }    
-    else if (askUsr === 'q') {
+    else if (askUsr !== 'n' || askUsr !== 'l' || askUsr !== 'd'){
+        askUsr = prompt('Please select CORRECT action:');
+    } else {
         break;
     }
+    
 }
 
 
