@@ -5,10 +5,12 @@ let   askUsr = prompt('Please select action:'),
 let newTask = 'n',
     listTask = 'l',
     deleteTask = 'd',
-    quit = 'q';
-//if new - add new item to arr
+    quit = 'q',
+    lineBr = '******************';
+//add new item to arr
 while (askUsr === 'n') {
-    if (askUsr === 'q') {break
+    if (askUsr === 'q') {
+        break
     } else {
         askUsr = prompt('What would you like to do?');
         console.log(askUsr);
@@ -18,8 +20,16 @@ while (askUsr === 'n') {
         }
     }
 }
+//list all entrys
+if (askUsr === 'l') {
+    for (const task of createEntry){
+        console.log(lineBr);
+        console.log(task)
+        console.log(lineBr);
+    }
+    
+}
 
-//if list - list all to-dos
 
 //if delete - delete specific to-do
 
