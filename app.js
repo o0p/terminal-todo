@@ -1,21 +1,15 @@
 //ask usr what action to perorm
-let   askUsr = prompt('Please select action:'),
-        createEntry = [];
+let   askUsr = prompt('Please select action:');
+const createEntry = [];
 //available actions
 let newTask = 'n',
     listTask = 'l',
     deleteTask = 'd',
     quit = 'q',
     lineBr = '******************';
-//add new item to arr
-
-
-while (askUsr !=='q'){
-    if (askUsr !== 'n' || askUsr !== 'l' || askUsr !== 'd' || askUsr !== 'q'){
-    askUsr = prompt('Please select CORRECT action:');
-}
-
-     if (askUsr === 'n') {
+//add new item to the list
+while (askUsr !==quit){
+     if (askUsr === newTask) {
         askUsr = prompt('What would you like to do?');
         console.log(`"${askUsr}" added to the list`);
         if (askUsr) {
@@ -24,7 +18,7 @@ while (askUsr !=='q'){
         }
     }
     //list all entrys
-    else if (askUsr === 'l') {
+    else if (askUsr === listTask) {
         console.log(lineBr);
         for (const task of createEntry){
             console.log(`${createEntry.indexOf(task)}: ${task}`)
@@ -33,13 +27,16 @@ while (askUsr !=='q'){
         askUsr = prompt('Please select action:');
     } 
     //delete entry
-    else if (askUsr === 'd') {
+    else if (askUsr === deleteTask ) {
+        //template
         console.log('deleted')
         askUsr = prompt('Please select action:');
     }    
-    else if (askUsr === 'q') {
+    else if (askUsr !== newTask || askUsr !== listTask || askUsr !== deleteTask){
+        askUsr = prompt('Please select CORRECT action:');
+    } else {
         break;
-    }
+    }    
 }
 
 
