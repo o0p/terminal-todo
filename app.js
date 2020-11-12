@@ -13,7 +13,7 @@ while (askUsr === 'n') {
         break
     } else {
         askUsr = prompt('What would you like to do?');
-        console.log(askUsr);
+        console.log(`"${askUsr}" added to the list`);
         if (askUsr) {
             askUsr = createEntry.push(askUsr);
             askUsr = prompt('Please select action:');
@@ -21,16 +21,32 @@ while (askUsr === 'n') {
     }
 }
 //list all entrys
-if (askUsr === 'l') {
+if (askUsr === 'l' || askUsr !== 'q') {
+    console.log(lineBr);
     for (const task of createEntry){
-        console.log(lineBr);
-        console.log(task)
-        console.log(lineBr);
+        console.log(`${createEntry.indexOf(task)}: ${task}`)
     }
-    
-}
+    console.log(lineBr);    
+    askUsr = prompt('Please select action:');
+    while (askUsr === 'n') {
+        if (askUsr === 'q') {
+            break
+        } else {
+            askUsr = prompt('What would you like to do?');
+            console.log(`"${askUsr}" added to the list`);
+            if (askUsr) {
+                askUsr = createEntry.push(askUsr);
+                askUsr = prompt('Please select action:');
+            }
+        }
+    }}
 
-
-//if delete - delete specific to-do
+    //delete specific to-do
+    // if (askUsr === 'd' || askUsr !== 'q') {
+    //     console.log('deleted')
+    //     askUsr = prompt('Please select action:');
+    //     console.log(askUsr);
+    // }
 
 //quit
+
