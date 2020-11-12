@@ -28,6 +28,7 @@ while (askUsr !==quit){
     } 
     //delete entry
     else if (askUsr === deleteTask ) {
+        //template
         console.log('deleted')
         askUsr = prompt('Please select action:');
     }    
