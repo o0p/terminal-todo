@@ -6,6 +6,7 @@ let addItem = 'n',
     listAll = 'l',
     delItem = 'd',
     quit = 'q',
+    indexDel = Number;
     lineBr = '******************';
 //add new item to the list
 while (askUsr !==quit){
@@ -23,21 +24,25 @@ while (askUsr !==quit){
         for (const item of itemtList){
             console.log(`${itemtList.indexOf(item)}: ${item}`)
         }
-        console.log(lineBr);    
+        console.log(lineBr);
         askUsr = prompt('Please select action:');
     } 
     //delete entry
     else if (askUsr === delItem ) {
         //template
-        console.log('deleted')
+        indexDel = parseInt(prompt('Please select index of item to delete:'));
+        console.log(indexDel);
+        itemtList.splice(indexDel, 1);
         askUsr = prompt('Please select action:');
-    }    
+    }
     else if (askUsr !== addItem || askUsr !== listAll || askUsr !== delItem){
-        askUsr = prompt('ERROR: actions not recognized. Please request correct actions');
+        askUsr = prompt('ERROR: action not recognized. Please request correct action');
     } else {
         break;
-    }    
+    }
 }
 
 
 
+//make usr input index num of item to delete
+//use splice to delete item
