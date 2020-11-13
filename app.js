@@ -6,6 +6,7 @@ let addItem = 'n',
     listAll = 'l',
     delItem = 'd',
     quit = 'q',
+    indexDel = Number;
     lineBr = '******************';
 //add new item to the list
 while (askUsr !==quit){
@@ -29,7 +30,9 @@ while (askUsr !==quit){
     //delete entry
     else if (askUsr === delItem ) {
         //template
-        console.log('deleted')
+        indexDel = parseInt(prompt('Please select index of item to delete:'));
+        console.log(indexDel);
+        itemtList.splice(indexDel, 1);
         askUsr = prompt('Please select action:');
     }
     else if (askUsr !== addItem || askUsr !== listAll || askUsr !== delItem){
@@ -41,3 +44,5 @@ while (askUsr !==quit){
 
 
 
+//make usr input index num of item to delete
+//use splice to delete item
