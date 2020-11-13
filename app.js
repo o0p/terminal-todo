@@ -23,7 +23,7 @@ while (askUsr !==quit){
         for (const item of itemtList){
             console.log(`${itemtList.indexOf(item)}: ${item}`)
         }
-        console.log(lineBr);    
+        console.log(lineBr);
         askUsr = prompt('Please select action:');
     } 
     //delete entry
@@ -31,12 +31,12 @@ while (askUsr !==quit){
         //template
         console.log('deleted')
         askUsr = prompt('Please select action:');
-    }    
+    }
     else if (askUsr !== addItem || askUsr !== listAll || askUsr !== delItem){
-        askUsr = prompt('ERROR: actions not recognized. Please request correct actions');
+        askUsr = prompt('ERROR: action not recognized. Please request correct actions');
     } else {
         break;
-    }    
+    }
 }
 
 
