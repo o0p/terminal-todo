@@ -33,7 +33,7 @@ while (askUsr !==quit){
         askUsr = prompt('Please select action:');
     }
     else if (askUsr !== addItem || askUsr !== listAll || askUsr !== delItem){
-        askUsr = prompt('ERROR: action not recognized. Please request correct actions');
+        askUsr = prompt('ERROR: action not recognized. Please request correct action');
     } else {
         break;
     }
