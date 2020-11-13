@@ -1,38 +1,38 @@
 //ask usr what action to perorm
 let   askUsr = prompt('Please select action:');
-const createEntry = [];
+const itemtList = [];
 //available actions
-let newTask = 'n',
-    listTask = 'l',
-    deleteTask = 'd',
+let addItem = 'n',
+    listAll = 'l',
+    delItem = 'd',
     quit = 'q',
     lineBr = '******************';
 //add new item to the list
 while (askUsr !==quit){
-     if (askUsr === newTask) {
+     if (askUsr === addItem) {
         askUsr = prompt('What would you like to do?');
         console.log(`"${askUsr}" added to the list`);
         if (askUsr) {
-            askUsr = createEntry.push(askUsr);
+            askUsr = itemtList.push(askUsr);
             askUsr = prompt('Please select action:');
         }
     }
     //list all entrys
-    else if (askUsr === listTask) {
+    else if (askUsr === listAll) {
         console.log(lineBr);
-        for (const task of createEntry){
-            console.log(`${createEntry.indexOf(task)}: ${task}`)
+        for (const item of itemtList){
+            console.log(`${itemtList.indexOf(item)}: ${item}`)
         }
         console.log(lineBr);    
         askUsr = prompt('Please select action:');
     } 
     //delete entry
-    else if (askUsr === deleteTask ) {
+    else if (askUsr === delItem ) {
         //template
         console.log('deleted')
         askUsr = prompt('Please select action:');
     }    
-    else if (askUsr !== newTask || askUsr !== listTask || askUsr !== deleteTask){
+    else if (askUsr !== addItem || askUsr !== listAll || askUsr !== delItem){
         askUsr = prompt('ERROR: actions not recognized. Please request correct actions');
     } else {
         break;
