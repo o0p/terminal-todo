@@ -33,7 +33,7 @@ while (askUsr !==quit){
         askUsr = prompt('Please select action:');
     }    
     else if (askUsr !== newTask || askUsr !== listTask || askUsr !== deleteTask){
-        askUsr = prompt('Please select CORRECT action:');
+        askUsr = prompt('ERROR: actions not recognized. Please request correct actions');
     } else {
         break;
     }    
