@@ -28,8 +28,7 @@ while (askUsr !==quit){
         askUsr = prompt('Please select action:');
     } 
     //delete entry
-    else if (askUsr === delItem ) {
-        //template
+    else if (askUsr === delItem ) {        
         indexDel = parseInt(prompt('Please select index of item to delete:'));
         console.log(indexDel);
         itemtList.splice(indexDel, 1);
@@ -43,6 +42,3 @@ while (askUsr !==quit){
 }
 
 
-
-//make usr input index num of item to delete
-//use splice to delete item
