@@ -1,4 +1,4 @@
-//ask usr what action to perorm
+//ask usr what action to perform
 let   askUsr = prompt('Please select action:');
 const itemtList = [];
 //available actions
@@ -18,7 +18,7 @@ while (askUsr !==quit){
             askUsr = prompt('Please select action:');
         }
     }
-    //list all entrys
+    //list all items
     else if (askUsr === listAll) {
         console.log(lineBr);
         for (const item of itemtList){
@@ -27,11 +27,10 @@ while (askUsr !==quit){
         console.log(lineBr);
         askUsr = prompt('Please select action:');
     } 
-    //delete entry
-    else if (askUsr === delItem ) {
-        //template
+    //delete item
+    else if (askUsr === delItem ) {        
         indexDel = parseInt(prompt('Please select index of item to delete:'));
-        console.log(indexDel);
+        console.log(`Item "${itemtList[indexDel]}" successfully deleted.`);
         itemtList.splice(indexDel, 1);
         askUsr = prompt('Please select action:');
     }
@@ -43,6 +42,3 @@ while (askUsr !==quit){
 }
 
 
-
-//make usr input index num of item to delete
-//use splice to delete item
