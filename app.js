@@ -30,7 +30,7 @@ while (askUsr !==quit){
     //delete entry
     else if (askUsr === delItem ) {        
         indexDel = parseInt(prompt('Please select index of item to delete:'));
-        console.log(indexDel);
+        console.log(`Item "${itemtList[indexDel]}" successfully deleted.`);
         itemtList.splice(indexDel, 1);
         askUsr = prompt('Please select action:');
     }
