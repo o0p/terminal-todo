@@ -1,9 +1,8 @@
 //ask usr what action to perform
-let   askUsr = prompt('Please select action:');
+let   askUsr = prompt('Please select action:'),
+      indexDel = Number;
+      lineBr = '******************';
 const itemtList = [];
-//available actions
-let indexDel = Number;
-    lineBr = '******************';
 //add new item to the list
 while (askUsr !=='q'){
      if (askUsr === 'n') {
