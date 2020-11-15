@@ -4,14 +4,14 @@ let   askUsr = prompt('Please select action:'),
 const itemtList = [];
 //add new item
 while (askUsr !=='q'){
-    while (askUsr !== 'n' && askUsr !== 'l' && askUsr !== 'd' && askUsr !=='q'){
+    while (!(askUsr === 'n' || askUsr === 'l' || askUsr === 'd' || askUsr === 'q')){
         askUsr = prompt('ERROR: action not recognized. Please request correct action');     
     } 
     if (askUsr === 'n') {
-       askUsr = prompt('What would you like to do?');
-       console.log(`"${askUsr}" added to the list`);
-       askUsr = itemtList.push(askUsr);
-   }
+        askUsr = prompt('What would you like to do?');
+        console.log(`"${askUsr}" added to the list`);
+        askUsr = itemtList.push(askUsr);
+    }
     //list all items
     else if (askUsr === 'l') {
         console.log(lineBr);
@@ -22,14 +22,16 @@ while (askUsr !=='q'){
     } 
     //delete item
     else if (askUsr === 'd' ) {        
-       let indexDel = parseInt(prompt('Please select index of item to delete:'));
-       while (Number.isNaN(indexDel) || indexDel < 0 || indexDel > itemtList.length){
-           indexDel = parseInt(prompt('Warning! Index can not be negative and has to exist! Please select index of item to delete:'));
-       }
-       console.log(`Item "${itemtList[indexDel]}" successfully deleted.`);
-       itemtList.splice(indexDel, 1);
+        let indexDel = parseInt(prompt('Please select index of item to delete:'));
+        while (Number.isNaN(indexDel) || indexDel < 0 || indexDel > itemtList.length){
+            indexDel = parseInt(prompt('Warning! Index can not be negative and has to exist! Please select index of item to delete:'));
+        }
+        console.log(`Item "${itemtList[indexDel]}" successfully deleted.`);
+        itemtList.splice(indexDel, 1);
     }      
+
     askUsr = prompt('Please select action!');    
 }
 console.log('Quitting');
+
 
